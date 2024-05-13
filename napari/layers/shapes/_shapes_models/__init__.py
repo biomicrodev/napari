@@ -4,5 +4,6 @@ from napari.layers.shapes._shapes_models.path import Path
 from napari.layers.shapes._shapes_models.polygon import Polygon
 from napari.layers.shapes._shapes_models.rectangle import Rectangle
 from napari.layers.shapes._shapes_models.shape import Shape
+from napari.layers.shapes._shapes_models.bow import Bow
 
-__all__ = ['Ellipse', 'Line', 'Path', 'Polygon', 'Rectangle', 'Shape']
+__all__ = ["Ellipse", "Line", "Path", "Polygon", "Rectangle", "Shape", "Bow"]

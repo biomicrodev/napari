@@ -10,6 +10,7 @@ from napari.layers.shapes._shapes_models import (
     Path,
     Polygon,
     Rectangle,
+    Bow,
 )
 from napari.layers.shapes._shapes_utils import triangulate_face
 
@@ -169,6 +170,17 @@ def test_line():
     np.random.seed(0)
     data = 20 * np.random.random((2, 2))
     shape = Line(data)
+    np.testing.assert_array_equal(shape.data, data)
+    assert shape.data_displayed.shape == (2, 2)
+    assert shape.slice_key.shape == (2, 0)
+
+
+def test_bow():
+    """Test creating Shape with a random bow."""
+    # Test a single two vertex line
+    np.random.seed(0)
+    data = 20 * np.random.random((2, 2))
+    shape = Bow(data)
     np.testing.assert_array_equal(shape.data, data)
     assert shape.data_displayed.shape == (2, 2)
     assert shape.slice_key.shape == (2, 0)

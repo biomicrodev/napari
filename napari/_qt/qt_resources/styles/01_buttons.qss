@@ -117,6 +117,10 @@ QtModeRadioButton[mode="line"]::indicator {
   image: url("theme_{{ id }}:/line.svg");
 }
 
+QtModeRadioButton[mode="bow"]::indicator {
+  image: url("theme_{{ id }}:/bow.svg");
+}
+
 QtModeRadioButton[mode="path"]::indicator {
   image: url("theme_{{ id }}:/path.svg");
 }

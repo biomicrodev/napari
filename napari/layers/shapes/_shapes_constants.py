@@ -8,6 +8,7 @@ from napari.layers.shapes._shapes_models import (
     Path,
     Polygon,
     Rectangle,
+    Bow,
 )
 from napari.utils.misc import StringEnum
 
@@ -37,6 +38,7 @@ class Mode(StringEnum):
     ADD_RECTANGLE = auto()
     ADD_ELLIPSE = auto()
     ADD_LINE = auto()
+    ADD_BOW = auto()
     ADD_PATH = auto()
     ADD_POLYGON = auto()
     ADD_POLYGON_LASSO = auto()
@@ -76,7 +78,7 @@ class Box:
     LEN = 8
 
 
-BACKSPACE = 'delete' if sys.platform == 'darwin' else 'backspace'
+BACKSPACE = "delete" if sys.platform == "darwin" else "backspace"
 
 
 class ShapeType(StringEnum):
@@ -87,6 +89,7 @@ class ShapeType(StringEnum):
     LINE = auto()
     PATH = auto()
     POLYGON = auto()
+    BOW = auto()
 
 
 shape_classes = {
@@ -95,4 +98,5 @@ shape_classes = {
     ShapeType.LINE: Line,
     ShapeType.PATH: Path,
     ShapeType.POLYGON: Polygon,
+    ShapeType.BOW: Bow,
 }

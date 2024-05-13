@@ -196,6 +196,9 @@ class QtShapesControls(QtLayerControls):
         self.line_button = _radio_button(
             layer, 'line', Mode.ADD_LINE, 'activate_add_line_mode'
         )
+        self.bow_button = _radio_button(
+            layer, 'bow', Mode.ADD_BOW, "activate_add_bow_mode"
+        )
         self.path_button = _radio_button(
             layer, 'path', Mode.ADD_PATH, 'activate_add_path_mode'
         )
@@ -261,6 +264,7 @@ class QtShapesControls(QtLayerControls):
             self.rectangle_button,
             self.ellipse_button,
             self.line_button,
+            self.bow_button,
             self.path_button,
             self.polygon_button,
             self.polygon_lasso_button,
@@ -278,6 +282,7 @@ class QtShapesControls(QtLayerControls):
         self.button_group.addButton(self.rectangle_button)
         self.button_group.addButton(self.ellipse_button)
         self.button_group.addButton(self.line_button)
+        self.button_group.addButton(self.bow_button)
         self.button_group.addButton(self.path_button)
         self.button_group.addButton(self.polygon_button)
         self.button_group.addButton(self.polygon_lasso_button)
@@ -299,6 +304,7 @@ class QtShapesControls(QtLayerControls):
         button_grid.addWidget(self.polygon_button, 1, 4)
         button_grid.addWidget(self.polygon_lasso_button, 1, 5)
         button_grid.addWidget(self.line_button, 1, 6)
+        button_grid.addWidget(self.bow_button, 2, 6)
         button_grid.addWidget(self.path_button, 1, 7)
         button_grid.setContentsMargins(5, 0, 0, 5)
         button_grid.setColumnStretch(0, 1)
@@ -363,6 +369,7 @@ class QtShapesControls(QtLayerControls):
             Mode.ADD_RECTANGLE: self.rectangle_button,
             Mode.ADD_ELLIPSE: self.ellipse_button,
             Mode.ADD_LINE: self.line_button,
+            Mode.ADD_BOW: self.bow_button,
             Mode.ADD_PATH: self.path_button,
             Mode.ADD_POLYGON: self.polygon_button,
             Mode.ADD_POLYGON_LASSO: self.polygon_lasso_button,

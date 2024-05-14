@@ -36,12 +36,10 @@ def _make_bow(
     trail_y = length * np.sin(trail_angles) + tail[1]
     trail_arc = np.stack([trail_x, trail_y]).T
 
-    # TODO: right now this doesn't work so well because the path of the bow
-    jitter = 0.0001
+    # TODO: right now this doesn't work so well because the path of the bow has to be
+    #  one continuous path and has sharp angles
     tail = tail[np.newaxis, ...]
-    points = np.concatenate(
-        [trail_arc, tail - jitter, tail, tail + jitter, lead_arc], axis=0
-    )
+    points = np.concatenate([trail_arc, tail, lead_arc], axis=0)
     return points
 
 
